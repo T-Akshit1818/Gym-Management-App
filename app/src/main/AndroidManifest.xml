@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fitnessclub">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/sadas"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/sadas"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".TrainerProfileActivity"></activity>
+        <activity android:name=".TrainerForgotActivity" />
+        <activity android:name=".ForgotuserActivity" />
+        <activity android:name=".TrainerHomeActivity" />
+        <activity android:name=".TrainerRegistrationActivity" />
+        <activity android:name=".Admin.TrainersList" />
+        <activity android:name=".Admin.UserList" />
+        <activity
+            android:name=".AdminHome"
+            android:theme="@style/AppTheme.noactionbar" />
+        <activity
+            android:name=".User_HomeActivity"
+            android:theme="@style/AppTheme.noactionbar" />
+        <activity android:name=".ProfileActivity" />
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/AppTheme.noactionbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegistrationActivity"
+            android:theme="@style/AppTheme.noactionbar" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.noactionbar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.noactionbar" />
+    </application>
+
+</manifest>
