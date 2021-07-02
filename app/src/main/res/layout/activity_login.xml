@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sadas"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Welcome"
+        android:gravity="center"
+        android:textSize="60sp"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="@drawable/circular_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/logintype"
+        android:textSize="20sp"
+        android:textColor="@color/yellow_shade"/>
+
+    <EditText
+        android:textColor="@color/yellow_shade"
+        android:paddingLeft="20dp"
+        android:hint="username"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:background="@drawable/circular_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:fontFamily="sans-serif-condensed-medium"
+        />
+
+    <EditText
+        android:textColor="@color/yellow_shade"
+        android:paddingLeft="10dp"
+        android:hint="password"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_margin="20dp"
+        android:background="@drawable/circular_textview"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        />
+
+    <TextView
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_margin="20dp"
+        android:layout_gravity="end"
+        android:textStyle="bold"
+        android:textColor="@color/yellow_shade"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgotpassword"
+        android:text="forgot password"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:text="Login"
+        android:background="@drawable/circular_button"/>
+
+        <TextView
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/yellow_shade"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_user"
+            android:text="New User"
+            />
+
+
+        <TextView
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/yellow_shade"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_trainer"
+            android:text="New Trainer"
+            />
+
+    </LinearLayout>
+</ScrollView>
