@@ -34,6 +34,35 @@ public class ProfileActivity extends AppCompatActivity {
        SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
         String emailId = sharedPreferences.getString("user_name", "def-val");
 
+        Call<List<ProfilePojo>> reg= ServiceGenerator.getGymApi().profile(emailId);
+        reg.enqueue(new Callback<List<ProfilePojo>>() {
+            @Override
+            public void onResponse(Call<List<ProfilePojo>> call, Response<List<ProfilePojo>> response) {
+                Toast.makeText(ProfileActivity.this,response.body().get(0).getEmail(),Toast.LENGTH_LONG).show();
+                fullname.setText(response.body().get(0).getFullname());
+                email.setText(response.body().get(0).getEmail());
+                password.setText(response.body().get(0).getPass());
+                phonenumber.setText(response.body().get(0).getPhonenumber());
+
+            }
+
+            @Override
+            public void onFailure(Call<List<ProfilePojo>> call, Throwable t) {
+                Toast.makeText(ProfileActivity.this,"fail",Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+
 
 
     }
