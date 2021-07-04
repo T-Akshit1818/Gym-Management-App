@@ -10,11 +10,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fitnessclub.Model.SuccessOrFailureResponse;
 import com.fitnessclub.Networking.ServiceGenerator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,12 +37,12 @@ public class RegistrationActivity extends AppCompatActivity {
         gender=findViewById(R.id.gender);
         type=findViewById(R.id.logintype);
 
-        ArrayAdapter aa = new ArrayAdapter(this, R.layout.spinner_list,logintype);
+        ArrayAdapter aa = new ArrayAdapter(this,R.layout.spinner_list,logintype);
         aa.setDropDownViewResource(R.layout.spinner_list);
         type.setAdapter(aa);
         type.setSelection(0);
 
-        ArrayAdapter aa1 = new ArrayAdapter(this, R.layout.spinner_list,gendertype);
+        ArrayAdapter aa1 = new ArrayAdapter(this,R.layout.spinner_list,gendertype);
         aa1.setDropDownViewResource(R.layout.spinner_list);
         gender.setAdapter(aa1);
         gender.setSelection(0);
@@ -59,9 +59,22 @@ public class RegistrationActivity extends AppCompatActivity {
                     Call<SuccessOrFailureResponse> reg= ServiceGenerator.getGymApi().register(getText(fullname),
                             getText(email),getText(password),getText(phonenumber),gender.getSelectedItem().toString(),
                             type.getSelectedItem().toString());
+                    reg.enqueue(new Callback<SuccessOrFailureResponse>() {
+                        @Override
+                        public void onResponse(Call<SuccessOrFailureResponse> call, Response<SuccessOrFailureResponse> response) {
+                            Toast.makeText(RegistrationActivity.this,response.toString(),Toast.LENGTH_LONG).show();
+                            Log.d("test123",response.toString());
+                            Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
+                            startActivity(i);
 
+                        }
 
-
+                        @Override
+                        public void onFailure(Call<SuccessOrFailureResponse> call, Throwable t) {
+                            //  Toast.makeText(RegistrationActivity.this,"fail",Toast.LENGTH_LONG).show();
+                            Log.d("test123",t.getMessage());
+                        }
+                    });
                 }
 
 
