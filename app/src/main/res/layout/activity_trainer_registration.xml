@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Trainer Registration"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textSize="25dp"/>
+
+
+        <EditText
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="20dp"
+            android:hint="full name"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tfullname"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="20dp"
+            android:hint="email"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/temail"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+
+        <EditText
+            android:inputType="number"
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="20dp"
+            android:hint="phone number"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tphonenumber"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+
+        <EditText
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="10dp"
+            android:hint="password"
+            android:textColorHint="@android:color/darker_gray"
+            android:layout_margin="20dp"
+            android:background="@drawable/circular_textview"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tpassword"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/exp"
+            android:textSize="20sp"
+            android:textColor="@color/yellow_shade"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:id="@+id/tRegister"
+            android:background="@drawable/circular_button"/>
+    </LinearLayout>
+</ScrollView>
