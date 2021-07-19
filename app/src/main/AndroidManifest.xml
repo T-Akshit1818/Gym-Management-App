@@ -15,7 +15,6 @@
         <activity android:name=".TrainerProfileActivity"></activity>
         <activity android:name=".TrainerForgotActivity" />
         <activity android:name=".ForgotuserActivity" />
-        <activity android:name=".TrainerHomeActivity" />
         <activity android:name=".TrainerRegistrationActivity" />
         <activity android:name=".Admin.TrainersList" />
         <activity android:name=".Admin.UserList" />
