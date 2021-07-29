@@ -27,7 +27,7 @@ public class AdminHome extends AppCompatActivity {
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+ // prashanth
 
         drawerLayout=findViewById(R.id.drawe_layout);
         navigationView=findViewById(R.id.nav_view);
