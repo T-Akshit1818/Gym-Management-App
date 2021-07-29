@@ -29,7 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        register=findViewById(R.id.Register);
+        register=(Button) findViewById(R.id.Register);
         fullname=findViewById(R.id.fullname);
         email=findViewById(R.id.email);
         phonenumber=findViewById(R.id.phonenumber);
@@ -55,32 +55,54 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(RegistrationActivity.this, "Fields cannot be left empty", Toast.LENGTH_SHORT).show();
                     return;
                 }else{
-                    //Toast.makeText(RegistrationActivity.this,getText(fullname)+getText(email)+getText(password)+getText(phonenumber)+gender.getSelectedItem().toString()+type.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
-                    Call<SuccessOrFailureResponse> reg= ServiceGenerator.getGymApi().register(getText(fullname),
-                            getText(email),getText(password),getText(phonenumber),gender.getSelectedItem().toString(),
-                            type.getSelectedItem().toString());
-                    reg.enqueue(new Callback<SuccessOrFailureResponse>() {
-                        @Override
-                        public void onResponse(Call<SuccessOrFailureResponse> call, Response<SuccessOrFailureResponse> response) {
-                            Toast.makeText(RegistrationActivity.this,response.toString(),Toast.LENGTH_LONG).show();
-                            Log.d("test123",response.toString());
-                            Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
-                            startActivity(i);
+                    Toast.makeText(RegistrationActivity.this,"Registered Successfully",Toast.LENGTH_LONG).show();
 
-                        }
+                    userRegistration();
 
-                        @Override
-                        public void onFailure(Call<SuccessOrFailureResponse> call, Throwable t) {
-                            //  Toast.makeText(RegistrationActivity.this,"fail",Toast.LENGTH_LONG).show();
-                            Log.d("test123",t.getMessage());
-                        }
-                    });
+                    Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
+                    startActivity(i);
                 }
 
 
             }
         });
     }
+
+
+    private void userRegistration()
+    {
+
+        Call<SuccessOrFailureResponse> reg= ServiceGenerator.getGymApi().register(getText(fullname),
+                getText(email),getText(password),getText(phonenumber),gender.getSelectedItem().toString());
+        reg.enqueue(new Callback<SuccessOrFailureResponse>() {
+            @Override
+            public void onResponse(Call<SuccessOrFailureResponse> call, Response<SuccessOrFailureResponse> response) {
+                if(response.isSuccessful())
+                {
+                    Toast.makeText(RegistrationActivity.this,response.body().toString(),Toast.LENGTH_LONG).show();
+                    // Log.d("test123",response.toString());
+                    Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else {
+                    Toast.makeText(RegistrationActivity.this,response.body().toString(),Toast.LENGTH_LONG).show();
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<SuccessOrFailureResponse> call, Throwable t) {
+                //  Toast.makeText(RegistrationActivity.this,"fail",Toast.LENGTH_LONG).show();
+                Log.d("test123",t.getMessage());
+            }
+        });
+    }
+
+
+
 
     private String getText(EditText editText){
         return editText.getText().toString();

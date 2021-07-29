@@ -94,6 +94,7 @@
             android:textColor="@color/yellow_shade"/>
 
         <androidx.appcompat.widget.AppCompatSpinner
+            android:visibility="gone"
             android:layout_margin="10dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:background="@drawable/circular_textview"
@@ -103,7 +104,7 @@
             android:textSize="20sp"
             android:textColor="@color/yellow_shade"/>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:paddingLeft="20dp"
