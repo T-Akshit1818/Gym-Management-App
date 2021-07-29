@@ -9,10 +9,13 @@ public class ProfilePojo {
     String email;
     @SerializedName("phonenumber")
     String phonenumber;
+    @SerializedName("phone")
+    String phone;
     @SerializedName("pass")
     String pass;
     @SerializedName("gender")
     String gender;
+
 
     public String getFullname() {
         return fullname;

@@ -22,8 +22,8 @@ public interface GymApi {
                                             @Query("email") String email,
                                             @Query("pass") String pass,
                                             @Query("phonenumber") String phonenumber,
-                                            @Query("gender") String gender,
-                                            @Query("type") String type);
+                                            @Query("gender") String gender
+                                            );
 
 
     @GET("/fitnessclub/user_login.php?")
@@ -36,16 +36,14 @@ public interface GymApi {
 
     @GET("/fitnessclub/trainer_registration.php?")
     Call<SuccessOrFailureResponse> trainerregister(@Query("fullname") String fullname,
-                                            @Query("email") String email,
-                                            @Query("pass") String pass,
-                                            @Query("phone") String phone,
-                                            @Query("exp") String exp);
+                                                   @Query("email") String email,
+                                                   @Query("pass") String pass,
+                                                   @Query("phone") String phone,
+                                                   @Query("exp") String exp);
 
 
     @GET("/fitnessclub/trainer_login.php?")
     Call<SuccessOrFailureResponse> trainerlogin(@Query("email") String email, @Query("pass") String password);
-
-
 
 
     @GET("/fitnessclub/trainer_profile.php?")
@@ -57,4 +55,5 @@ public interface GymApi {
 
     @GET("/fitnessclub/gettrainerslist.php")
     Call<List<UsersPojo>> gettrainerslist();
+
 }
