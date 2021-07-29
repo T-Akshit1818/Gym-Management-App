@@ -1,6 +1,8 @@
 package com.fitnessclub.Model;
 
 public class UsersPojo {
+    String id;
+    String pass;
     String fullname;
     String email;
     String gender;
@@ -36,5 +38,21 @@ public class UsersPojo {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 }
