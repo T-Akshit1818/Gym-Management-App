@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddWorkoutActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Add Workout"
+            android:gravity="left"
+            android:layout_margin="20dp"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow_shade"
+            android:text="Workout type"
+            android:textSize="14dp"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/type"
+
+            android:textSize="20sp"
+            android:textColor="@color/yellow_shade"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow_shade"
+            android:text="Workout level"
+            android:textSize="14dp"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/level"
+
+            android:textSize="20sp"
+            android:textColor="@color/yellow_shade"/>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow_shade"
+            android:text="Workout time"
+            android:textSize="14dp"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/time"
+
+            android:textSize="20sp"
+            android:textColor="@color/yellow_shade"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow_shade"
+            android:text="Specify Gender"
+            android:textSize="14dp"/>
+        <Spinner
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gender"
+
+            android:textSize="20sp"
+            android:textColor="@color/yellow_shade"/>
+
+        <EditText
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="20dp"
+            android:hint="About"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:id="@+id/about"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Image"
+            android:id="@+id/picupload"
+            android:background="@drawable/circular_button"
+            android:layout_margin="20dp"/>
+
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnaddworkout"
+            android:text="Add"
+            android:background="@drawable/circular_button"/>
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
