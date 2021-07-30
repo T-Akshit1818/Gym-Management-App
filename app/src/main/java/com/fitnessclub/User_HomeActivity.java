@@ -1,4 +1,4 @@
-package com.fitnessclub.Networking;
+package com.fitnessclub;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.fitnessclub.LoginActivity;
-import com.fitnessclub.ProfileActivity;
-import com.fitnessclub.R;
-import com.fitnessclub.Utils;
 import com.google.android.material.navigation.NavigationView;
 
 public class User_HomeActivity extends AppCompatActivity {
