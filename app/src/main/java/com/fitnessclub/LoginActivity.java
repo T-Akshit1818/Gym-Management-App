@@ -47,10 +47,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         forgotpassword = findViewById(R.id.forgotpassword);
+
+
         ArrayAdapter aa = new ArrayAdapter(this, R.layout.spinner_list, type);
         aa.setDropDownViewResource(R.layout.spinner_list);
         spinner.setAdapter(aa);
         spinner.setSelection(0);
+
+
+
         new_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,10 +115,10 @@ public class LoginActivity extends AppCompatActivity {
                                 SharedPreferences.Editor et = sharedPreferences.edit();
                                 et.putString("user_name", getText(username));
                                 et.commit();
-//                                Intent i = new Intent(LoginActivity.this, TrainerHomeActivity.class);
-//
-//                                startActivity(i);
-//                                finish();
+                                Intent i = new Intent(LoginActivity.this, TrainerHomeActivity.class);
+
+                                startActivity(i);
+                                finish();
                             }
 
                             @Override
