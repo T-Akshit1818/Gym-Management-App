@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookTrainerActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Book Trainer"
+            android:gravity="center"
+            android:textSize="50sp"/>
+
+
+        <EditText
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="20dp"
+            android:hint="Name"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etname"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/circular_textview"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_marginRight="20dp"
+            android:hint="Select Date"
+            />
+
+        <EditText
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:textColor="@color/yellow_shade"
+            android:paddingLeft="20dp"
+            android:hint="Message"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etmessage"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+
+
+
+
+
+        <Button
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book"
+            android:id="@+id/btnbooktrainer"
+            android:background="@drawable/circular_button"/>
+    </LinearLayout>
+</ScrollView>
