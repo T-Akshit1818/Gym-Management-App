@@ -1,8 +1,11 @@
-package com.fitnessclub.Networking;
+package com.fitnessclub;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,11 +15,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fitnessclub.Model.SuccessOrFailureResponse;
-import com.fitnessclub.R;
-import com.fitnessclub.Utils;
+import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.Calendar;
 
