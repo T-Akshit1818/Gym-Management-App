@@ -1,4 +1,4 @@
-package com.fitnessclub.Networking;
+package com.fitnessclub;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fitnessclub.Adapters.UserTrainersListAdapter;
 import com.fitnessclub.Model.TrainersPojo;
-import com.fitnessclub.R;
+import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.List;
 

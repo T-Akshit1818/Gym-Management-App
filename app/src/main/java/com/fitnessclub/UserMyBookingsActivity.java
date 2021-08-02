@@ -1,4 +1,4 @@
-package com.fitnessclub.Networking;
+package com.fitnessclub;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fitnessclub.Adapters.UserMybookingsAdapter;
 import com.fitnessclub.Model.BookingsPojo;
-import com.fitnessclub.R;
-import com.fitnessclub.Utils;
+import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.fitnessclub.Networking;
+package com.fitnessclub;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -12,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fitnessclub.Adapters.TrainerChatAdapter;
 import com.fitnessclub.Model.MessagePojo;
-import com.fitnessclub.R;
-import com.fitnessclub.Utils;
+import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.ArrayList;
 import java.util.List;

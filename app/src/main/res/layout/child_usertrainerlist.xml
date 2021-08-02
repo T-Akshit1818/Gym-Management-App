@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+            <ImageView
+
+                android:id="@+id/userimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/ic_launcher_persons" />
+            <LinearLayout
+
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:text="name" />
+
+                <TextView
+
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:text="Email" />
+
+                <TextView
+
+                    android:id="@+id/exp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:text="Experience" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imgcall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/ic_baseline_call_24"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/imgmsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_message_24"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Book"
+                android:background="@drawable/circular_button"
+                android:id="@+id/btnbook"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <RatingBar
+        android:layout_marginTop="0dp"
+        android:id="@+id/rv_rating"
+        android:scaleX=".3"
+        android:scaleY=".3"
+        android:focusable="false"
+        android:clickable="false"
+        android:layout_gravity="right"
+        android:isIndicator="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:saveEnabled="true"
+        android:numStars="5"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+</LinearLayout>
