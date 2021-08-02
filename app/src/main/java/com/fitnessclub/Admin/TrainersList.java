@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.fitnessclub.Model.TrainersPojo;
 import com.fitnessclub.Model.UsersPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
 import com.fitnessclub.R;
@@ -25,21 +26,24 @@ public class TrainersList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
         list=(ListView)findViewById(R.id.list);
+        getSupportActionBar().setTitle("Trainers List");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        Call<List<UsersPojo>> reg= ServiceGenerator.getGymApi().gettrainerslist();
-        reg.enqueue(new Callback<List<UsersPojo>>() {
+        Call<List<TrainersPojo>> reg= ServiceGenerator.getGymApi().gettrainerslist();
+        reg.enqueue(new Callback<List<TrainersPojo>>() {
             @Override
-            public void onResponse(Call<List<UsersPojo>> call, Response<List<UsersPojo>> response) {
-                List<UsersPojo> usersPojos=response.body();
+            public void onResponse(Call<List<TrainersPojo>> call, Response<List<TrainersPojo>> response) {
+                List<TrainersPojo> usersPojos=response.body();
                 Log.d("test123",usersPojos.get(0).getEmail());
-                AdminUsersAdapter adminUsersAdapter=new AdminUsersAdapter(usersPojos);
-                list.setAdapter(adminUsersAdapter);
+                AdminTrainerAdapter adminTrainerAdapter=new AdminTrainerAdapter(usersPojos,TrainersList.this);
+                list.setAdapter(adminTrainerAdapter);
             }
 
             @Override
-            public void onFailure(Call<List<UsersPojo>> call, Throwable t) {
+            public void onFailure(Call<List<TrainersPojo>> call, Throwable t) {
                 Log.d("test123",t.getMessage().toString());
             }
         });
