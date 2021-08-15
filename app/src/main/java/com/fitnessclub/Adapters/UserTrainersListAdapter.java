@@ -13,15 +13,23 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.fitnessclub.AdminHome;
 import com.fitnessclub.BookTrainerActivity;
+import com.fitnessclub.Model.SuccessOrFailureResponse;
 import com.fitnessclub.Model.TrainersPojo;
+import com.fitnessclub.Networking.ServiceGenerator;
 import com.fitnessclub.R;
 import com.fitnessclub.UserMessageActivity;
 import com.fitnessclub.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UserTrainersListAdapter extends BaseAdapter {
     List<TrainersPojo> usersPojoList=new ArrayList<>();
@@ -30,7 +38,7 @@ public class UserTrainersListAdapter extends BaseAdapter {
     SharedPreferences sharedPreferences;
     String session;
     ProgressDialog progressDialog;
-    public UserTrainersListAdapter(List<TrainersPojo> usersPojoList, Context con){
+    public UserTrainersListAdapter(  List<TrainersPojo> usersPojoList, Context con){
         this.usersPojoList=usersPojoList;
         this.con = con;
     }
@@ -75,6 +83,7 @@ public class UserTrainersListAdapter extends BaseAdapter {
                 session = sharedPreferences.getString("user_name", "def-val");
                 Intent intent=new Intent(con, UserMessageActivity.class);
                 intent.putExtra("from",session);
+                intent.putExtra("name",usersPojoList.get(position).getFullname());
                 intent.putExtra("to",usersPojoList.get(position).getEmail());
                 con.startActivity(intent);
             }

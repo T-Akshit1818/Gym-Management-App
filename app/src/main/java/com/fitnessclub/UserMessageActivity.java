@@ -1,4 +1,4 @@
-package com.fitnessclub.Networking;
+package com.fitnessclub;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -16,7 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fitnessclub.Adapters.UserMessageAdapter;
 import com.fitnessclub.Model.MessagePojo;
 import com.fitnessclub.Model.SuccessOrFailureResponse;
-import com.fitnessclub.R;
+import com.fitnessclub.Networking.GymApi;
+import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.ArrayList;
 import java.util.List;

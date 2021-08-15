@@ -51,6 +51,8 @@ public class TrainerRegistrationActivity extends AppCompatActivity {
                     Toast.makeText(TrainerRegistrationActivity.this, "Fields cannot be left empty", Toast.LENGTH_SHORT).show();
                     return;
                 }else{
+                    Toast.makeText(TrainerRegistrationActivity.this,"Registered Successfully",Toast.LENGTH_LONG).show();
+
                     //Toast.makeText(RegistrationActivity.this,getText(fullname)+getText(email)+getText(password)+getText(phonenumber)+gender.getSelectedItem().toString()+type.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
                     Call<SuccessOrFailureResponse> reg= ServiceGenerator.getGymApi().trainerregister(getText(fullname),
                             getText(email),getText(password),getText(phone),gender.getSelectedItem().toString());
@@ -70,6 +72,9 @@ public class TrainerRegistrationActivity extends AppCompatActivity {
                             Log.d("test123",t.getMessage());
                         }
                     });
+
+                    Intent i = new Intent(TrainerRegistrationActivity.this, LoginActivity.class);
+                    startActivity(i);
                 }
             }
         });
