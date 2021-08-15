@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     Spinner spinner;
 
     Button login;
-    TextView forgotpassword, new_user,new_trainer;
+    TextView forgotpassword, new_user,new_trainer,uforgotpassword,tforgotpassword;
     EditText username, password;
     String type[] = {"Select Login Type", "admin", "user", "Trainer"};
 
@@ -37,6 +37,23 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         username = findViewById(R.id.username);
         new_user = findViewById(R.id.new_user);
+        tforgotpassword=(TextView)findViewById(R.id.tforgotpassword);
+        tforgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, TrainerForgotActivity.class);
+                startActivity(i);
+            }
+        });
+
+        uforgotpassword=(TextView)findViewById(R.id.uforgotpassword);
+        uforgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, ForgotuserActivity.class);
+                startActivity(i);
+            }
+        });
 
         new_trainer=findViewById(R.id.new_trainer);
         new_trainer.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        forgotpassword = findViewById(R.id.forgotpassword);
 
 
         ArrayAdapter aa = new ArrayAdapter(this, R.layout.spinner_list, type);

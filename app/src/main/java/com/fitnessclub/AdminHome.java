@@ -24,6 +24,7 @@ import com.fitnessclub.Adapters.AdapterAdminHome;
 import com.fitnessclub.Adapters.Adaptertrainerworkoutlist;
 import com.fitnessclub.Admin.TrainersList;
 import com.fitnessclub.Admin.TrainingListActivity;
+import com.fitnessclub.Admin.UserComplaintsActivity;
 import com.fitnessclub.Admin.UserList;
 import com.fitnessclub.Model.WotoutPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
@@ -65,25 +66,30 @@ public class AdminHome extends AppCompatActivity {
                 ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        //  navigationView.setCheckedItem(R.id.nav_users);
+      //  navigationView.setCheckedItem(R.id.nav_users);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.nav_users:
                         Intent intent1 =new Intent(AdminHome.this, UserList.class);
-                        // intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                       // intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent1);
                         break;
                     case R.id.nav_trainers:
                         Intent i =new Intent(AdminHome.this, TrainersList.class);
-                        //  i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                      //  i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(i);
                         break;
                     case R.id.nav_training:
                         Intent t =new Intent(AdminHome.this, TrainingListActivity.class);
-                        //   t.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                     //   t.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(t);
+                        break;
+                    case R.id.nav_complaints:
+                        Intent c =new Intent(AdminHome.this, UserComplaintsActivity.class);
+                        //   t.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(c);
                         break;
                     case R.id.log_out:
                         navigationView.setCheckedItem(R.id.log_out);
@@ -112,7 +118,7 @@ public class AdminHome extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<WotoutPojo>> call, Response<List<WotoutPojo>> response) {
                 loading.dismiss();
-                // Toast.makeText(AdminHome.this, response.toString(), Toast.LENGTH_SHORT).show();
+                 // Toast.makeText(AdminHome.this, response.toString(), Toast.LENGTH_SHORT).show();
                 if (response.body() == null) {
                     Toast.makeText(AdminHome.this, "No data found", Toast.LENGTH_SHORT).show();
                 } else {
