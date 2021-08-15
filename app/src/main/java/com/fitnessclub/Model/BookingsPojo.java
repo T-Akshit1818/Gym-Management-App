@@ -23,6 +23,10 @@ public class BookingsPojo {
     private
     String status;
 
+    @SerializedName("tim")
+    private
+    String tim;
+
     public String getFullname() {
         return fullname;
     }
@@ -69,5 +73,13 @@ public class BookingsPojo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTim() {
+        return tim;
+    }
+
+    public void setTim(String tim) {
+        this.tim = tim;
     }
 }

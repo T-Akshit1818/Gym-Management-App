@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fitnessclub.Model.BookingsPojo;
 import com.fitnessclub.Model.SuccessOrFailureResponse;
 import com.fitnessclub.Networking.ServiceGenerator;
 import com.fitnessclub.R;

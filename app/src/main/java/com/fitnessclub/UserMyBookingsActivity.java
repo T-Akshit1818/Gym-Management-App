@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fitnessclub.Adapters.UserMybookingsAdapter;
-import com.fitnessclub.Model.BookingsPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.List;

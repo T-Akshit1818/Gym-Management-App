@@ -11,8 +11,6 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.fitnessclub.Adapters.TrainerMyBookingsAdapter;
-import com.fitnessclub.Adapters.UserMybookingsAdapter;
-import com.fitnessclub.Model.BookingsPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
 
 import java.util.List;

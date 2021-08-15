@@ -10,12 +10,12 @@ public class ProfilePojo {
     @SerializedName("phonenumber")
     String phonenumber;
     @SerializedName("phone")
+    private
     String phone;
     @SerializedName("pass")
     String pass;
     @SerializedName("gender")
     String gender;
-
 
     public String getFullname() {
         return fullname;
@@ -55,5 +55,13 @@ public class ProfilePojo {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
