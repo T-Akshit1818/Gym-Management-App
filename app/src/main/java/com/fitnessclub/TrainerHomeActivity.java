@@ -41,7 +41,8 @@ public class TrainerHomeActivity extends AppCompatActivity {
         cdbookings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i=new Intent(TrainerHomeActivity.this,TrainerMyBookingsActivity.class);
+                startActivity(i);
             }
         });
         cdprogress=(CardView)findViewById(R.id.cdprogress);
@@ -55,7 +56,8 @@ public class TrainerHomeActivity extends AppCompatActivity {
         cdchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i=new Intent(TrainerHomeActivity.this,TrainerChatActivity.class);
+                startActivity(i);
             }
         });
 
