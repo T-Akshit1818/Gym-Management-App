@@ -1,18 +1,22 @@
 package com.fitnessclub;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.fitnessclub.Adapters.Adaptertrainerworkoutlist;
+import com.fitnessclub.Model.UsersPojo;
 import com.fitnessclub.Model.WotoutPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
 

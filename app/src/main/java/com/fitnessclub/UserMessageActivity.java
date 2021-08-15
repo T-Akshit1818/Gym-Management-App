@@ -1,5 +1,9 @@
 package com.fitnessclub;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,13 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.fitnessclub.Adapters.UserMessageAdapter;
 import com.fitnessclub.Model.MessagePojo;
 import com.fitnessclub.Model.SuccessOrFailureResponse;
+import com.fitnessclub.Model.TrainersPojo;
 import com.fitnessclub.Networking.GymApi;
 import com.fitnessclub.Networking.ServiceGenerator;
 
@@ -45,11 +46,12 @@ public class UserMessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_message);
+
         et_message = (EditText) findViewById(R.id.et_message);
         btn_send = (Button) findViewById(R.id.btn_send);
         frm = getIntent().getStringExtra("from");
         eto = getIntent().getStringExtra("to");
-
+        setTitle(getIntent().getStringExtra("name"));
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
