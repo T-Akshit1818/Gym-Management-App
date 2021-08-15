@@ -7,13 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.fitnessclub.AdminHome;
 import com.fitnessclub.EditWorkoutActivity;
 import com.fitnessclub.Model.SuccessOrFailureResponse;
+import com.fitnessclub.Model.UsersPojo;
 import com.fitnessclub.Model.WotoutPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
 import com.fitnessclub.R;
@@ -31,7 +34,7 @@ public class Adaptertrainerworkoutlist extends BaseAdapter {
     Context con;
     ProgressDialog progressDialog;
     String url= "http://getfitt.club/fitnessclub/";
-    public Adaptertrainerworkoutlist(List<WotoutPojo> wotoutPojo, Context con){
+    public Adaptertrainerworkoutlist(List<WotoutPojo> wotoutPojo,Context con){
         this.wotoutPojo=wotoutPojo;
         this.con = con;
     }
