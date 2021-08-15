@@ -10,9 +10,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.fitnessclub.Model.SuccessOrFailureResponse;
@@ -30,15 +32,23 @@ public class BookTrainerActivity extends AppCompatActivity {
     EditText etmessage,etname,et_date;
     Button btnbooktrainer;
     ProgressDialog loading;
+    Spinner sptim;
+    String tim[] = {"9AM","10AM","11AM","12PM","1PM","2PM","3PM","4PM","5PM"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_trainer);
-
+        sptim=findViewById(R.id.sptim);
 
         etmessage=(EditText)findViewById(R.id.etmessage);
 
         etname=(EditText)findViewById(R.id.etname);
+
+        ArrayAdapter aa1 = new ArrayAdapter(this,R.layout.spinner_list,tim);
+        aa1.setDropDownViewResource(R.layout.spinner_list);
+        sptim.setAdapter(aa1);
+        sptim.setSelection(0);
+
 
         et_date=(EditText)findViewById(R.id.et_date);
         et_date.setFocusable(false);
@@ -80,7 +90,7 @@ public class BookTrainerActivity extends AppCompatActivity {
         String tid=getIntent().getStringExtra("tid");
         Toast.makeText(BookTrainerActivity.this,tid,Toast.LENGTH_LONG).show();
 
-        Call<SuccessOrFailureResponse> reg= ServiceGenerator.getGymApi().booktrainer(tid,et_date.getText().toString(),etmessage.getText().toString(),etname.getText().toString(),emailId);
+        Call<SuccessOrFailureResponse> reg= ServiceGenerator.getGymApi().booktrainer(tid,et_date.getText().toString(),etmessage.getText().toString(),etname.getText().toString(),emailId,sptim.getSelectedItem().toString());
         reg.enqueue(new Callback<SuccessOrFailureResponse>() {
             @Override
             public void onResponse(Call<SuccessOrFailureResponse> call, Response<SuccessOrFailureResponse> response) {
@@ -88,9 +98,6 @@ public class BookTrainerActivity extends AppCompatActivity {
                 {
                     loading.dismiss();
                     Toast.makeText(BookTrainerActivity.this,response.body().toString(),Toast.LENGTH_LONG).show();
-                    // Log.d("test123",response.toString());
-//                    Intent i = new Intent(BookTrainerActivity.this, UsertrainersListActivity.class);
-//                    startActivity(i);
                     finish();
                 }
                 else {
