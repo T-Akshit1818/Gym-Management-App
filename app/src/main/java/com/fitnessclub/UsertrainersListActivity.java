@@ -1,14 +1,16 @@
 package com.fitnessclub;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.fitnessclub.Adapters.UserTrainersListAdapter;
+import com.fitnessclub.Admin.AdminTrainerAdapter;
+import com.fitnessclub.Admin.TrainersList;
 import com.fitnessclub.Model.TrainersPojo;
 import com.fitnessclub.Networking.ServiceGenerator;
 
