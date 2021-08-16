@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fitnessclub.Model.BookingsPojo;
 import com.fitnessclub.Model.SuccessOrFailureResponse;
 import com.fitnessclub.Networking.ServiceGenerator;
 import com.fitnessclub.R;
@@ -54,7 +55,16 @@ public class TrainerMyBookingsAdapter extends BaseAdapter {
         TextView tvmessage=v.findViewById(R.id.tvmessage);
         TextView tvstatus=v.findViewById(R.id.tvstatus);
         TextView tvdate=v.findViewById(R.id.tvdate);
+        TextView tvtime=v.findViewById(R.id.tvtime);
         Button btnconfirm=v.findViewById(R.id.btnconfirm);
+        Button btncancel=v.findViewById(R.id.btncancel);
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cancelBooking(bookPojo.get(position).getBid());
+            }
+        });
+
         btnconfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,9 +73,22 @@ public class TrainerMyBookingsAdapter extends BaseAdapter {
             }
         });
 
+
+        if(bookPojo.get(position).getStatus().equals("Booked"))
+        {
+            btncancel.setVisibility(View.VISIBLE);
+            btnconfirm.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            btncancel.setVisibility(View.GONE);
+            btnconfirm.setVisibility(View.GONE);
+        }
+
         tvname.setText("User Name : "+bookPojo.get(position).getName());
         tvmessage.setText("Message : "+bookPojo.get(position).getMessage());
         tvstatus.setText("Status : "+bookPojo.get(position).getStatus());
+        tvtime.setText("Time : "+bookPojo.get(position).getTim());
         tvdate.setText(bookPojo.get(position).getDat());
         return v;
     }
@@ -96,5 +119,33 @@ public class TrainerMyBookingsAdapter extends BaseAdapter {
             }
         });
     }
+
+    public void cancelBooking(final String bid)
+    {
+        progressDialog = new ProgressDialog(con);
+        progressDialog.setMessage("Cancel Booking");
+        progressDialog.show();
+        Call<SuccessOrFailureResponse> call = ServiceGenerator.getGymApi().cancelbooking(bid);
+        call.enqueue(new Callback<SuccessOrFailureResponse>() {
+            @Override
+            public void onResponse(Call<SuccessOrFailureResponse> call, Response<SuccessOrFailureResponse> response) {
+                progressDialog.dismiss();
+                if(response.body()==null){
+                    Toast.makeText(con,"Something wrong",Toast.LENGTH_SHORT).show();
+                }else {
+                    Intent intent=new Intent(con, TrainerHomeActivity.class);
+                    con.startActivity(intent);
+
+                    Toast.makeText(con,"Booking Cancelled successfully",Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<SuccessOrFailureResponse> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(con, "Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }
