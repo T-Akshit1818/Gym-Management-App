@@ -1,16 +1,17 @@
 package com.fitnessclub;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.fitnessclub.Adapters.TrainerMessageAdapter;
 import com.fitnessclub.Model.MessagePojo;
@@ -46,6 +47,14 @@ public class TrainerMessageActivity extends AppCompatActivity {
         btnsend=(Button)findViewById(R.id.btnsend);
         frm=getIntent().getStringExtra("from");
         eto=getIntent().getStringExtra("to");
+
+        String email = frm;
+        String[] parts = email.split("@");
+
+        // now parts[0] contains "example"
+        // and parts[1] contains "domain.com"
+
+        setTitle(parts[0]);
         btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
